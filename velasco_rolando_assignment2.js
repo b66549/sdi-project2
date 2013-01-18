@@ -8,6 +8,7 @@ var knightName = "Sir Lot";
 var isEquipped = true;
 var wishToJoinArthurKnights = true;
 var curiousAboutJoiningArthurKnights = true;
+var daysToTrain = 4;
 var numOfArthurKnights = 7;
 var numOfSeats = 12;
 var ArthurKnightsNames = [];
@@ -45,7 +46,20 @@ var canJoinArthurKnights = function(join, curious) {
 	};
 };
 
-
+// Number function in flow chart
+// Take a number as the argument, enter a while loop and do some math and outputs, then return a number.
+var training = function(days) {
+	var strength = 0;
+	var daysPassed = 0;
+	var daysLeft = days;
+	while (daysPassed < days) {
+	strength = strength + 3;
+	daysLeft = daysLeft - 1;
+	daysPassed = daysPassed + 1;
+	console.log("You have trained for " + daysPassed + " day(s).  Your strength has improved!  You have only " + daysLeft + " day(s) left.");
+	};
+	return strength;
+};
 
 
 
@@ -53,3 +67,5 @@ var canJoinArthurKnights = function(join, curious) {
 console.log("Welcome, " + knightName + ", to the Heroes Training Camp.");
 checkEquipment(isEquipped);
 var willJoinArthurKnights = canJoinArthurKnights(wishToJoinArthurKnights, curiousAboutJoiningArthurKnights);
+console.log("You will be given " + daysToTrain + " days to train here.  Training begins now!");
+var newStrength = training(daysToTrain);
