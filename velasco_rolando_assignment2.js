@@ -5,6 +5,7 @@
 
 // Set variables
 var knightName = "Sir Lot";
+var knightTrait = "Cunning";
 var isEquipped = true;
 var wishToJoinArthurKnights = true;
 var curiousAboutJoiningArthurKnights = true;
@@ -61,6 +62,14 @@ var training = function(days) {
 	return strength;
 };
 
+// String function in flow chart
+// Take two strings as arguments and do some string concatenation, then return the string.
+var knightTitle = function (name, trait) {
+	var title = "";
+	title = name + ", the " + trait;
+	return title;
+}
+
 
 
 // Main code
@@ -69,3 +78,4 @@ checkEquipment(isEquipped);
 var willJoinArthurKnights = canJoinArthurKnights(wishToJoinArthurKnights, curiousAboutJoiningArthurKnights);
 console.log("You will be given " + daysToTrain + " days to train here.  Training begins now!");
 var newStrength = training(daysToTrain);
+var newTitle = knightTitle(knightName, knightTrait);
